@@ -75,7 +75,7 @@ namespace GpuFinderOnCurryPcWorld
         public static async Task<(bool, string, string)> IsInStock(string url)
         {
             var responseString = await client.GetStringAsync(url);
-            return (!responseString.Contains("Sorry this item is out of stock") && !responseString.Contains("Request Rejected</title></head><body>The requested"), responseString, url);
+            return (!responseString.Contains("Out of stock") && !responseString.Contains("Request Rejected</title></head><body>The requested"), responseString, url);
         }
     }
 }
